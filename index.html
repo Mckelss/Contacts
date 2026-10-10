@@ -20,10 +20,10 @@
       <h1 id="profile-name">Michael Cesar C. Generalao</h1>
       <p class="role">Computer Teacher</p>
       <p class="company">Manila City</p>
-      <button class="save-button" id="save-contact" type="button" aria-label="Save Michael Cesar C. Generalao as a contact">
+      <a class="save-button" href="contact.vcf" type="text/vcard" aria-label="Save Michael Cesar C. Generalao as a contact">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m-4 4 4-4 4 4M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/></svg>
         Save contact
-      </button>
+      </a>
     </header>
 
     <section class="section" aria-labelledby="connect-heading">
@@ -37,7 +37,7 @@
           <span class="action-icon"><svg viewBox="0 0 24 24" fill="#1877f2" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.8 4a.7.7 0 0 1-1.2-.54V16A2.5 2.5 0 0 1 2 13.5v-8A2.5 2.5 0 0 1 4 5.5Z"/><circle cx="8" cy="9.5" r="1" fill="#fff"/><circle cx="12" cy="9.5" r="1" fill="#fff"/><circle cx="16" cy="9.5" r="1" fill="#fff"/></svg></span>
           <span><span class="action-title">Text message</span><span class="action-detail">Start an SMS conversation</span></span><span class="arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="action" href="https://www.facebook.com/messages/e2ee/t/9616914315030188" target="_blank" rel="noopener noreferrer" aria-label="Message Michael on Messenger">
+        <a class="action" href="https://m.me/michael.mcg11" target="_blank" rel="noopener noreferrer" aria-label="Message Michael on Messenger">
           <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="messenger-gradient" x1="4" y1="20" x2="20" y2="4" gradientUnits="userSpaceOnUse"><stop stop-color="#087cff"/><stop offset="1" stop-color="#c238ed"/></linearGradient></defs><path fill="url(#messenger-gradient)" d="M12 2C6.48 2 2 6.12 2 11.2c0 2.78 1.32 5.26 3.4 6.9V22l3.77-2.07c.9.25 1.85.38 2.83.38 5.52 0 10-4.12 10-9.2S17.52 2 12 2Z"/><path fill="#fff" d="m6.9 13.75 4.35-4.62a.65.65 0 0 1 .93-.03l2.4 2 2.47-1.98c.45-.36 1.08.17.75.65l-3.13 4.58a.65.65 0 0 1-.94.15l-2.45-1.88-3.65 1.88c-.5.26-1.1-.34-.73-.75Z"/></svg></span>
           <span><span class="action-title">Messenger</span><span class="action-detail">Open Messenger chat</span></span><span class="arrow" aria-hidden="true">↗</span>
         </a>
@@ -65,53 +65,5 @@
     </section>
     <footer>Powered by<span>TapTapTap</span></footer>
   </main>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script>
-    // Replace these demo details with the card owner's real contact information.
-    const contact = {
-      firstName: "Michael Cesar C.",
-      lastName: "Generalao",
-      phone: "+639910147225",
-      email: "mgeneralao04@gmail.com",
-      address: "Manila City, Philippines",
-      website: "https://profile-shog.vercel.app/card/alex-morgan"
-    };
-
-    const toast = document.getElementById("toast");
-    let toastTimer;
-    function showToast(message) {
-      toast.textContent = message;
-      toast.classList.add("show");
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
-    }
-
-    // A web page cannot write a contact to a phone's address book without the person's action.
-    // This button creates a standard vCard that the visitor can choose to save.
-    document.getElementById("save-contact").addEventListener("click", () => {
-      const escapeVCard = value => value.replace(/\\/g, "\\\\").replace(/\n/g, "\\n").replace(/,/g, "\\,").replace(/;/g, "\\;");
-      const vcard = [
-        "BEGIN:VCARD", "VERSION:3.0",
-        `N:${escapeVCard(contact.lastName)};${escapeVCard(contact.firstName)};;;`,
-        `FN:${escapeVCard(contact.firstName + " " + contact.lastName)}`,
-        `TEL;TYPE=CELL:${contact.phone}`,
-        `EMAIL:${contact.email}`,
-        `ADR;TYPE=WORK:;;${escapeVCard(contact.address)};;;;`,
-        `URL:${contact.website}`,
-        "END:VCARD"
-      ].join("\r\n");
-      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "Michael-Cesar-C-Generalao.vcf";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(url);
-      showToast("Contact card ready — open it to save Michael to your contacts.");
-    });
-  </script>
 </body>
 </html>
