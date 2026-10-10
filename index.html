@@ -65,5 +65,31 @@
     </section>
     <footer>Powered by<span>TapTapTap</span></footer>
   </main>
+  <script>
+    const contactCard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:Generalao;Michael;Cesar C.;;;",
+      "FN:Michael Cesar C. Generalao",
+      "ORG:Manila City",
+      "TITLE:Computer Teacher",
+      "TEL;TYPE=CELL,VOICE:+639910147225",
+      "EMAIL;TYPE=INTERNET:mgeneralao04@gmail.com",
+      "ADR;TYPE=WORK:;;;Manila City;;;Philippines",
+      "URL:https://m.me/michael.mcg11",
+      "END:VCARD"
+    ].join("\r\n");
+    const contactFile = new File([contactCard], "Michael-Cesar-C-Generalao.vcf", { type: "text/vcard" });
+    const saveContactLink = document.querySelector(".save-button");
+
+    saveContactLink.addEventListener("click", event => {
+      if (!navigator.share || !navigator.canShare || !navigator.canShare({ files: [contactFile] })) return;
+
+      event.preventDefault();
+      navigator.share({ files: [contactFile], title: "Michael Cesar C. Generalao" }).catch(error => {
+        if (error.name !== "AbortError") window.location.assign(saveContactLink.href);
+      });
+    });
+  </script>
 </body>
 </html>
