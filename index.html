@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#091624">
+  <meta name="description" content="An NFC-ready digital contact card for Michael Cesar C. Generalao.">
+  <title>Michael Cesar C. Generalao · Digital Contact Card</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card" aria-labelledby="profile-name">
+    <header class="hero">
+      <div class="nfc-mark" aria-label="NFC tap to open profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 8a5.7 5.7 0 0 0 0 8M11 5a10 10 0 0 0 0 14M14 2a14 14 0 0 0 0 20M17 8a5.7 5.7 0 0 1 0 8"/></svg>
+        Tap to connect
+      </div>
+      <img class="avatar" src="https://profile-shog.vercel.app/img/image.jpg" alt="Portrait of Michael Cesar C. Generalao">
+      <p class="eyebrow">Digital business card</p>
+      <h1 id="profile-name">Michael Cesar C. Generalao</h1>
+      <p class="role">Computer Teacher</p>
+      <p class="company">Manila City</p>
+      <button class="save-button" id="save-contact" type="button" aria-label="Save Michael Cesar C. Generalao as a contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m-4 4 4-4 4 4M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/></svg>
+        Save contact
+      </button>
+    </header>
+
+    <section class="section" aria-labelledby="connect-heading">
+      <h2 class="section-label" id="connect-heading">Get in touch</h2>
+      <div class="actions">
+        <a class="action" href="tel:+639910147225" aria-label="Call Michael Cesar C. Generalao at 0991 014 7225">
+          <span class="action-icon"><svg viewBox="0 0 24 24" fill="#168a53" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.56.57c.56 0 1.01.45 1.01 1.01V20c0 .56-.45 1.01-1.01 1.01C10.6 21.01 2.99 13.4 2.99 4.01 2.99 3.45 3.44 3 4 3h3.5c.56 0 1.01.45 1.01 1.01 0 1.24.2 2.43.57 3.56a1 1 0 0 1-.25 1.02z"/></svg></span>
+          <span><span class="action-title">Call</span><span class="action-detail">0991 014 7225</span></span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="action" href="sms:+639910147225" aria-label="Text Michael Cesar C. Generalao">
+          <span class="action-icon"><svg viewBox="0 0 24 24" fill="#1877f2" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.8 4a.7.7 0 0 1-1.2-.54V16A2.5 2.5 0 0 1 2 13.5v-8A2.5 2.5 0 0 1 4 5.5Z"/><circle cx="8" cy="9.5" r="1" fill="#fff"/><circle cx="12" cy="9.5" r="1" fill="#fff"/><circle cx="16" cy="9.5" r="1" fill="#fff"/></svg></span>
+          <span><span class="action-title">Text message</span><span class="action-detail">Start an SMS conversation</span></span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="action" href="https://www.facebook.com/messages/e2ee/t/9616914315030188" target="_blank" rel="noopener noreferrer" aria-label="Message Michael on Messenger">
+          <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="messenger-gradient" x1="4" y1="20" x2="20" y2="4" gradientUnits="userSpaceOnUse"><stop stop-color="#087cff"/><stop offset="1" stop-color="#c238ed"/></linearGradient></defs><path fill="url(#messenger-gradient)" d="M12 2C6.48 2 2 6.12 2 11.2c0 2.78 1.32 5.26 3.4 6.9V22l3.77-2.07c.9.25 1.85.38 2.83.38 5.52 0 10-4.12 10-9.2S17.52 2 12 2Z"/><path fill="#fff" d="m6.9 13.75 4.35-4.62a.65.65 0 0 1 .93-.03l2.4 2 2.47-1.98c.45-.36 1.08.17.75.65l-3.13 4.58a.65.65 0 0 1-.94.15l-2.45-1.88-3.65 1.88c-.5.26-1.1-.34-.73-.75Z"/></svg></span>
+          <span><span class="action-title">Messenger</span><span class="action-detail">Open Messenger chat</span></span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="action" href="mailto:mgeneralao04@gmail.com" aria-label="Email Michael at mgeneralao04@gmail.com">
+          <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Z"/><path d="M5 7 12 12.3 19 7" fill="none" stroke="#ea4335" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8v10.5c0 .28.22.5.5.5H7V9.5L5 8Zm14 0-2 1.5V19h1.5c.28 0 .5-.22.5-.5V8Z" fill="#c5221f"/></svg></span>
+          <span><span class="action-title">Email</span><span class="action-detail">mgeneralao04@gmail.com</span></span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="action" href="https://www.google.com/maps/search/?api=1&amp;query=Manila+City" target="_blank" rel="noopener noreferrer" aria-label="Open Manila City in Google Maps">
+          <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="maps-pin-clip"><path d="M12 22s8-7.2 8-13A8 8 0 1 0 4 9c0 5.8 8 13 8 13Z"/></clipPath></defs><g clip-path="url(#maps-pin-clip)"><path fill="#34a853" d="M2 2h10v10H2z"/><path fill="#4285f4" d="M12 2h10v10H12z"/><path fill="#fbbc04" d="M2 12h10v12H2z"/><path fill="#ea4335" d="M12 12h10v12H12z"/></g><circle cx="12" cy="9" r="3.1" fill="#fff"/><circle cx="12" cy="9" r="1.55" fill="#4285f4"/></svg></span>
+          <span><span class="action-title">Google Maps</span><span class="action-detail">Manila City</span></span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="details-wrap" aria-labelledby="company-heading">
+      <div class="details">
+        <p class="eyebrow">Contact profile</p>
+        <h2 id="company-heading">Michael Cesar C. Generalao</h2>
+        <p>Use the contact buttons above to reach Michael by phone, text, Messenger, or email.</p>
+        <div class="address">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>Manila City, Philippines</span>
+        </div>
+      </div>
+    </section>
+    <footer>Powered by<span>TapTapTap</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // Replace these demo details with the card owner's real contact information.
+    const contact = {
+      firstName: "Michael Cesar C.",
+      lastName: "Generalao",
+      phone: "+639910147225",
+      email: "mgeneralao04@gmail.com",
+      address: "Manila City, Philippines",
+      website: "https://profile-shog.vercel.app/card/alex-morgan"
+    };
+
+    const toast = document.getElementById("toast");
+    let toastTimer;
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
+    }
+
+    // A web page cannot write a contact to a phone's address book without the person's action.
+    // This button creates a standard vCard that the visitor can choose to save.
+    document.getElementById("save-contact").addEventListener("click", () => {
+      const escapeVCard = value => value.replace(/\\/g, "\\\\").replace(/\n/g, "\\n").replace(/,/g, "\\,").replace(/;/g, "\\;");
+      const vcard = [
+        "BEGIN:VCARD", "VERSION:3.0",
+        `N:${escapeVCard(contact.lastName)};${escapeVCard(contact.firstName)};;;`,
+        `FN:${escapeVCard(contact.firstName + " " + contact.lastName)}`,
+        `TEL;TYPE=CELL:${contact.phone}`,
+        `EMAIL:${contact.email}`,
+        `ADR;TYPE=WORK:;;${escapeVCard(contact.address)};;;;`,
+        `URL:${contact.website}`,
+        "END:VCARD"
+      ].join("\r\n");
+      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "Michael-Cesar-C-Generalao.vcf";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      showToast("Contact card ready — open it to save Michael to your contacts.");
+    });
+  </script>
+</body>
+</html>
