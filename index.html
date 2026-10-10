@@ -81,8 +81,25 @@
     ].join("\r\n");
     const contactFile = new File([contactCard], "Michael-Cesar-C-Generalao.vcf", { type: "text/vcard" });
     const saveContactLink = document.querySelector(".save-button");
+    const isAndroid = /Android/i.test(navigator.userAgent);
+
+    if (isAndroid) {
+      const intentValue = value => encodeURIComponent(value);
+      saveContactLink.href = [
+        "intent:#Intent",
+        "action=android.intent.action.INSERT",
+        "type=vnd.android.cursor.dir/contact",
+        `S.name=${intentValue("Michael Cesar C. Generalao")}`,
+        `S.phone=${intentValue("+639910147225")}`,
+        `S.email=${intentValue("mgeneralao04@gmail.com")}`,
+        `S.company=${intentValue("Manila City")}`,
+        `S.job_title=${intentValue("Computer Teacher")}`,
+        "end"
+      ].join(";");
+    }
 
     saveContactLink.addEventListener("click", event => {
+      if (isAndroid) return;
       if (!navigator.share || !navigator.canShare || !navigator.canShare({ files: [contactFile] })) return;
 
       event.preventDefault();
