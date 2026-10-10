@@ -20,10 +20,11 @@
       <h1 id="profile-name">Michael Cesar C. Generalao</h1>
       <p class="role">Computer Teacher</p>
       <p class="company">Manila City</p>
-      <a class="save-button" href="contact.vcf" type="text/vcard" aria-label="Save Michael Cesar C. Generalao as a contact">
+      <button class="save-button" id="save-contact" type="button" aria-label="Add Michael Cesar C. Generalao to your contacts">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m-4 4 4-4 4 4M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/></svg>
         Save contact
-      </a>
+      </button>
+      <p class="contact-feedback" id="contact-feedback" role="status" aria-live="polite" hidden></p>
     </header>
 
     <section class="section" aria-labelledby="connect-heading">
@@ -66,26 +67,19 @@
     <footer>Powered by<span>TapTapTap</span></footer>
   </main>
   <script>
-    const contactCard = [
-      "BEGIN:VCARD",
-      "VERSION:3.0",
-      "N:Generalao;Michael;Cesar C.;;;",
-      "FN:Michael Cesar C. Generalao",
-      "ORG:Manila City",
-      "TITLE:Computer Teacher",
-      "TEL;TYPE=CELL,VOICE:+639910147225",
-      "EMAIL;TYPE=INTERNET:mgeneralao04@gmail.com",
-      "ADR;TYPE=WORK:;;;Manila City;;;Philippines",
-      "URL:https://m.me/michael.mcg11",
-      "END:VCARD"
-    ].join("\r\n");
-    const contactFile = new File([contactCard], "Michael-Cesar-C-Generalao.vcf", { type: "text/vcard" });
-    const saveContactLink = document.querySelector(".save-button");
+    const saveContactButton = document.getElementById("save-contact");
+    const contactFeedback = document.getElementById("contact-feedback");
     const isAndroid = /Android/i.test(navigator.userAgent);
 
-    if (isAndroid) {
+    saveContactButton.addEventListener("click", () => {
+      if (!isAndroid) {
+        contactFeedback.textContent = "This device's browser cannot open a prefilled new-contact form directly. This feature requires a native app or the phone's contact import flow.";
+        contactFeedback.hidden = false;
+        return;
+      }
+
       const intentValue = value => encodeURIComponent(value);
-      saveContactLink.href = [
+      const addContactIntent = [
         "intent:#Intent",
         "action=android.intent.action.INSERT",
         "type=vnd.android.cursor.dir/contact",
@@ -96,16 +90,7 @@
         `S.job_title=${intentValue("Computer Teacher")}`,
         "end"
       ].join(";");
-    }
-
-    saveContactLink.addEventListener("click", event => {
-      if (isAndroid) return;
-      if (!navigator.share || !navigator.canShare || !navigator.canShare({ files: [contactFile] })) return;
-
-      event.preventDefault();
-      navigator.share({ files: [contactFile], title: "Michael Cesar C. Generalao" }).catch(error => {
-        if (error.name !== "AbortError") window.location.assign(saveContactLink.href);
-      });
+      window.location.href = addContactIntent;
     });
   </script>
 </body>
