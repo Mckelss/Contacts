@@ -20,10 +20,10 @@
       <h1 id="profile-name">Michael Cesar C. Generalao</h1>
       <p class="role">Computer Teacher</p>
       <p class="company">Manila City</p>
-      <button class="save-button" id="save-contact" type="button" aria-label="Add Michael Cesar C. Generalao to your contacts">
+      <a class="save-button" id="save-contact" href="#" role="button" aria-label="Add Michael Cesar C. Generalao to your contacts">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m-4 4 4-4 4 4M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/></svg>
         Save contact
-      </button>
+      </a>
       <p class="contact-feedback" id="contact-feedback" role="status" aria-live="polite" hidden></p>
     </header>
 
@@ -71,15 +71,9 @@
     const contactFeedback = document.getElementById("contact-feedback");
     const isAndroid = /Android/i.test(navigator.userAgent);
 
-    saveContactButton.addEventListener("click", () => {
-      if (!isAndroid) {
-        contactFeedback.textContent = "This device's browser cannot open a prefilled new-contact form directly. This feature requires a native app or the phone's contact import flow.";
-        contactFeedback.hidden = false;
-        return;
-      }
-
+    if (isAndroid) {
       const intentValue = value => encodeURIComponent(value);
-      const addContactIntent = [
+      saveContactButton.href = [
         "intent:#Intent",
         "action=android.intent.action.INSERT",
         "type=vnd.android.cursor.dir/contact",
@@ -90,7 +84,15 @@
         `S.job_title=${intentValue("Computer Teacher")}`,
         "end"
       ].join(";");
-      window.location.href = addContactIntent;
+    }
+
+    saveContactButton.addEventListener("click", event => {
+      if (!isAndroid) {
+        event.preventDefault();
+        contactFeedback.textContent = "This device's browser cannot open a prefilled new-contact form directly. This feature requires a native app or the phone's contact import flow.";
+        contactFeedback.hidden = false;
+        return;
+      }
     });
   </script>
 </body>
