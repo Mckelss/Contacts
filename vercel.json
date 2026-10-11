@@ -9,7 +9,7 @@
         },
         {
           "key": "Content-Disposition",
-          "value": "inline; filename=Michael-Cesar-C-Generalao.vcf"
+          "value": "attachment; filename=Michael-Cesar-C-Generalao.vcf"
         }
       ]
     }

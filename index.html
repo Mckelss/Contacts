@@ -20,7 +20,7 @@
       <h1 id="profile-name">Michael Cesar C. Generalao</h1>
       <p class="role">Computer Teacher</p>
       <p class="company">Manila City</p>
-      <a class="save-button" id="save-contact" href="contact.vcf" role="button" aria-label="Add Michael Cesar C. Generalao to your contacts">
+      <a class="save-button" id="save-contact" href="contact.vcf" download="Michael-Cesar-C-Generalao.vcf" aria-label="Save Michael Cesar C. Generalao to your contacts">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m-4 4 4-4 4 4M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/></svg>
         Save contact
       </a>
@@ -75,36 +75,56 @@
       "N:Generalao;Michael;Cesar C.;;;",
       "FN:Michael Cesar C. Generalao",
       "TEL;TYPE=CELL:+639910147225",
+      "EMAIL;TYPE=INTERNET:mgeneralao04@gmail.com",
+      "ORG:Manila City",
+      "TITLE:Computer Teacher",
       "END:VCARD"
     ].join("\r\n");
-    const contactFile = !isAndroid && typeof File !== "undefined"
+    const contactFile = typeof File !== "undefined"
       ? new File([contactCard], "Michael-Cesar-C-Generalao.vcf", { type: "text/vcard" })
       : null;
 
     if (isAndroid) {
-      const intentValue = value => encodeURIComponent(value);
-      saveContactButton.href = [
-        "intent:#Intent",
+      const intentValue = value => encodeURIComponent(value).replace(/'/g, "%27");
+      const androidIntent = [
+        "intent://contacts/#Intent",
         "action=android.intent.action.INSERT",
         "type=vnd.android.cursor.dir/contact",
         `S.name=${intentValue("Michael Cesar C. Generalao")}`,
-        `S.phone=${intentValue("0991 014 7225")}`,
+        `S.phone=${intentValue("+639910147225")}`,
+        `S.email=${intentValue("mgeneralao04@gmail.com")}`,
+        `S.company=${intentValue("Manila City")}`,
+        `S.job_title=${intentValue("Computer Teacher")}`,
         "end"
       ].join(";");
+
+      saveContactButton.href = androidIntent;
+      saveContactButton.removeAttribute("download");
+
+      saveContactButton.addEventListener("click", () => {
+        let appOpened = false;
+        const markAppOpened = () => {
+          if (document.visibilityState === "hidden") appOpened = true;
+        };
+        document.addEventListener("visibilitychange", markAppOpened, { once: true });
+        window.setTimeout(() => {
+          document.removeEventListener("visibilitychange", markAppOpened);
+          if (!appOpened && document.visibilityState === "visible") {
+            window.location.assign("contact.vcf");
+          }
+        }, 1400);
+      });
     }
 
     saveContactButton.addEventListener("click", event => {
       if (isAndroid) return;
 
-      event.preventDefault();
-      if (!contactFile || !navigator.share || !navigator.canShare || !navigator.canShare({ files: [contactFile] })) {
-        window.location.assign(saveContactButton.href);
-        return;
+      if (contactFile && navigator.share && navigator.canShare && navigator.canShare({ files: [contactFile] })) {
+        event.preventDefault();
+        navigator.share({ files: [contactFile], title: "Michael Cesar C. Generalao" }).catch(error => {
+          if (error.name !== "AbortError") window.location.assign("contact.vcf");
+        });
       }
-
-      navigator.share({ files: [contactFile], title: "Michael Cesar C. Generalao" }).catch(error => {
-        if (error.name !== "AbortError") window.location.assign(saveContactButton.href);
-      });
     });
   </script>
 </body>
