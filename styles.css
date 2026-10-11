@@ -34,12 +34,14 @@
       box-shadow: var(--card-shadow);
     }
     .hero { padding: 30px 26px 25px; text-align: center; }
-    .brand-logo { display: block; width: min(80px, 35%); height: auto; margin: 0 auto 18px; }
+    .brand-logo { display: block; width: min(48px, 26%); height: auto; margin: 0 auto 18px; }
     .avatar {
       width: 104px;
       height: 104px;
       object-fit: cover;
       object-position: center 34%;
+      user-select: none;
+      -webkit-user-drag: none;
       display: grid;
       place-items: center;
       margin: 0 auto 19px;

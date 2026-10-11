@@ -11,8 +11,8 @@
 <body>
   <main class="card" aria-labelledby="profile-name">
     <header class="hero">
-      <img class="brand-logo" src="img/taptaptap-logo.webp" alt="TapTapTap NFC logo" width="190" height="119" fetchpriority="high">
-      <img class="avatar" src="img/profile.webp" alt="Portrait of Michael Cesar C. Generalao" loading="eager" fetchpriority="high">
+      <img class="brand-logo" src="img/taptaptap-logo.webp" alt="TapTapTap NFC logo" width="48" height="30" fetchpriority="high">
+      <img class="avatar" src="img/profile.webp" alt="Portrait of Michael Cesar C. Generalao" loading="eager" fetchpriority="high" draggable="false">
       <p class="eyebrow">Digital business card</p>
       <h1 id="profile-name">Michael Cesar C. Generalao</h1>
       <p class="role">Computer Teacher</p>
@@ -92,6 +92,10 @@
     <footer>Powered by<span>TapTapTap</span></footer>
   </main>
   <script>
+    const profilePhoto = document.querySelector(".avatar");
+    profilePhoto.addEventListener("contextmenu", event => event.preventDefault());
+    profilePhoto.addEventListener("dragstart", event => event.preventDefault());
+
     const saveContactButton = document.getElementById("save-contact");
     const isAndroid = /Android/i.test(navigator.userAgent);
 
