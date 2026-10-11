@@ -156,27 +156,37 @@
     .social-arrow { margin-left: auto; font-size: 19px; line-height: 1; opacity: .85; }
     .details-wrap { padding: 0 23px 24px; }
     .details {
-      padding: 19px 17px 17px;
-      border: 1px solid var(--line);
-      border-radius: 19px;
-      background: var(--secondary-card);
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
     }
-    .details h2 { margin: 0 0 9px; font-size: 17px; letter-spacing: -.025em; }
     .details p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
-    .details .details-role { color: var(--ink); font-weight: 650; }
-    .details .details-intro { margin-top: 7px; }
-    .detail-list { display: grid; margin-top: 14px; }
-    .detail-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 0;
+    .details .details-intro { margin-top: 0; }
+    .detail-list {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr) minmax(0, 1fr);
+      margin-top: 14px;
+      padding-top: 8px;
       border-top: 1px solid var(--line);
     }
+    .detail-item {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 5px;
+      text-align: center;
+    }
+    .detail-item + .detail-item { border-left: 1px solid var(--line); }
     .detail-item > svg { width: 19px; height: 19px; flex: 0 0 19px; fill: none; stroke: var(--teal); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .detail-item > span { min-width: 0; }
     .detail-label, .detail-value { display: block; }
     .detail-label { margin-bottom: 3px; color: var(--muted); font-size: 9px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
-    .detail-value { color: var(--ink); font-size: 12px; line-height: 1.45; overflow-wrap: anywhere; }
+    .detail-value { color: var(--ink); font-size: 10px; line-height: 1.4; overflow-wrap: anywhere; }
+    .detail-item:nth-child(2) .detail-value { font-size: clamp(8px, 2.1vw, 9px); white-space: nowrap; }
+    .details .save-button { display: flex; width: 100%; margin-top: 14px; }
     footer { padding: 0 24px 21px; text-align: center; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
     footer span { display: block; margin-top: 5px; color: var(--teal-strong); font-size: 12px; letter-spacing: .07em; text-transform: none; }
     .toast {
