@@ -49,7 +49,7 @@
       letter-spacing: .15em;
       text-transform: uppercase;
     }
-    .nfc-mark svg { width: 15px; height: 15px; color: var(--teal); }
+    .nfc-mark svg { width: 17px; height: 17px; color: var(--teal); }
     .avatar {
       width: 104px;
       height: 104px;
@@ -140,6 +140,33 @@
     .action-title { font-size: 14px; font-weight: 750; }
     .action-detail { display: block; margin-top: 2px; color: rgba(5, 47, 53, .72); font-size: 11px; font-weight: 550; }
     .arrow { margin-left: auto; font-size: 19px; line-height: 1; opacity: .72; }
+    .social-section { padding: 0 23px 25px; }
+    .social-links { display: grid; gap: 10px; }
+    .social-link {
+      min-height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 16px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 15px;
+      background: linear-gradient(105deg, #1766e8, #0ca9f2);
+      color: #fff;
+      box-shadow: 0 5px 16px rgba(22, 119, 242, .17);
+      font-size: 14px;
+      font-weight: 750;
+      transition: transform .17s ease, filter .17s ease, box-shadow .17s ease;
+    }
+    .social-link:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 9px 22px rgba(22, 119, 242, .24); }
+    .social-link:active { transform: translateY(0); }
+    .social-icon { width: 21px; height: 21px; flex: 0 0 21px; }
+    .social-link--facebook { background: #0866ff; box-shadow: 0 5px 16px rgba(8, 102, 255, .2); }
+    .social-link--tiktok { background: #050505; box-shadow: 0 5px 16px rgba(0, 0, 0, .24); }
+    .social-link--instagram { background: linear-gradient(45deg, #feda75 0%, #fa7e1e 27%, #d62976 58%, #962fbf 78%, #4f5bd5 100%); box-shadow: 0 5px 16px rgba(214, 41, 118, .2); }
+    .social-link--tiktok:hover { box-shadow: 0 9px 22px rgba(0, 0, 0, .3); }
+    .social-link--instagram:hover { box-shadow: 0 9px 22px rgba(214, 41, 118, .28); }
+    .social-arrow { margin-left: auto; font-size: 19px; line-height: 1; opacity: .85; }
     .details-wrap { padding: 0 23px 24px; }
     .details {
       padding: 19px 17px 17px;
@@ -149,8 +176,20 @@
     }
     .details h2 { margin: 0 0 9px; font-size: 17px; letter-spacing: -.025em; }
     .details p { margin: 0; color: #a5b6c0; font-size: 13px; line-height: 1.65; }
-    .address { display: flex; align-items: flex-start; gap: 9px; margin-top: 13px; color: #d8e4e9; font-size: 12px; line-height: 1.5; }
-    .address svg { width: 16px; height: 16px; flex: 0 0 16px; margin-top: 1px; color: var(--teal); }
+    .details .details-role { color: #d8e4e9; font-weight: 650; }
+    .details .details-intro { margin-top: 7px; }
+    .detail-list { display: grid; margin-top: 14px; }
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+    .detail-item > svg { width: 19px; height: 19px; flex: 0 0 19px; fill: none; stroke: var(--teal); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .detail-label, .detail-value { display: block; }
+    .detail-label { margin-bottom: 3px; color: #91a4b3; font-size: 9px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    .detail-value { color: #e8f1f4; font-size: 12px; line-height: 1.45; overflow-wrap: anywhere; }
     footer { padding: 0 24px 21px; text-align: center; color: #607687; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
     footer span { display: block; margin-top: 5px; color: #46bbaa; font-size: 12px; letter-spacing: .07em; text-transform: none; }
     .toast {
@@ -177,7 +216,7 @@
       body { padding: 14px 10px; }
       .card { border-radius: 25px; }
       .hero { padding: 23px 20px 21px; }
-      .section, .details-wrap { padding-right: 17px; padding-left: 17px; }
+      .section, .social-section, .details-wrap { padding-right: 17px; padding-left: 17px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }

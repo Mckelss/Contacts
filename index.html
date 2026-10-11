@@ -11,9 +11,9 @@
 <body>
   <main class="card" aria-labelledby="profile-name">
     <header class="hero">
-      <div class="nfc-mark" aria-label="NFC tap to open profile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 8a5.7 5.7 0 0 0 0 8M11 5a10 10 0 0 0 0 14M14 2a14 14 0 0 0 0 20M17 8a5.7 5.7 0 0 1 0 8"/></svg>
-        Tap to connect
+      <div class="nfc-mark" aria-label="NFC">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16zM18 6h-5c-1.1 0-2 .9-2 2v2.28c-.6.35-1 .98-1 1.72 0 1.1.9 2 2 2s2-.9 2-2c0-.74-.4-1.38-1-1.72V8h3v8H8V8h2V6H6v12h12V6z"/></svg>
+        NFC
       </div>
       <img class="avatar" src="img/profile.webp" alt="Portrait of Michael Cesar C. Generalao" loading="eager" fetchpriority="high">
       <p class="eyebrow">Digital business card</p>
@@ -31,23 +31,41 @@
       <div class="actions">
         <a class="action" href="tel:+639910147225" aria-label="Call Michael Cesar C. Generalao at 0991 014 7225">
           <span class="action-icon"><svg viewBox="0 0 24 24" fill="#168a53" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.56.57c.56 0 1.01.45 1.01 1.01V20c0 .56-.45 1.01-1.01 1.01C10.6 21.01 2.99 13.4 2.99 4.01 2.99 3.45 3.44 3 4 3h3.5c.56 0 1.01.45 1.01 1.01 0 1.24.2 2.43.57 3.56a1 1 0 0 1-.25 1.02z"/></svg></span>
-          <span><span class="action-title">Call</span><span class="action-detail">0991 014 7225</span></span><span class="arrow" aria-hidden="true">↗</span>
+          <span><span class="action-title">Call</span></span><span class="arrow" aria-hidden="true">↗</span>
         </a>
         <a class="action" href="sms:+639910147225" aria-label="Text Michael Cesar C. Generalao">
           <span class="action-icon"><svg viewBox="0 0 24 24" fill="#1877f2" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.8 4a.7.7 0 0 1-1.2-.54V16A2.5 2.5 0 0 1 2 13.5v-8A2.5 2.5 0 0 1 4 5.5Z"/><circle cx="8" cy="9.5" r="1" fill="#fff"/><circle cx="12" cy="9.5" r="1" fill="#fff"/><circle cx="16" cy="9.5" r="1" fill="#fff"/></svg></span>
-          <span><span class="action-title">Text message</span><span class="action-detail">Start an SMS conversation</span></span><span class="arrow" aria-hidden="true">↗</span>
+          <span><span class="action-title">Text message</span></span><span class="arrow" aria-hidden="true">↗</span>
         </a>
         <a class="action" href="https://m.me/michael.mcg11" target="_blank" rel="noopener noreferrer" aria-label="Message Michael on Messenger">
           <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="messenger-gradient" x1="4" y1="20" x2="20" y2="4" gradientUnits="userSpaceOnUse"><stop stop-color="#087cff"/><stop offset="1" stop-color="#c238ed"/></linearGradient></defs><path fill="url(#messenger-gradient)" d="M12 2C6.48 2 2 6.12 2 11.2c0 2.78 1.32 5.26 3.4 6.9V22l3.77-2.07c.9.25 1.85.38 2.83.38 5.52 0 10-4.12 10-9.2S17.52 2 12 2Z"/><path fill="#fff" d="m6.9 13.75 4.35-4.62a.65.65 0 0 1 .93-.03l2.4 2 2.47-1.98c.45-.36 1.08.17.75.65l-3.13 4.58a.65.65 0 0 1-.94.15l-2.45-1.88-3.65 1.88c-.5.26-1.1-.34-.73-.75Z"/></svg></span>
-          <span><span class="action-title">Messenger</span><span class="action-detail">Open Messenger chat</span></span><span class="arrow" aria-hidden="true">↗</span>
+          <span><span class="action-title">Messenger</span></span><span class="arrow" aria-hidden="true">↗</span>
         </a>
         <a class="action" href="mailto:mgeneralao04@gmail.com" aria-label="Email Michael at mgeneralao04@gmail.com">
           <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Z"/><path d="M5 7 12 12.3 19 7" fill="none" stroke="#ea4335" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8v10.5c0 .28.22.5.5.5H7V9.5L5 8Zm14 0-2 1.5V19h1.5c.28 0 .5-.22.5-.5V8Z" fill="#c5221f"/></svg></span>
-          <span><span class="action-title">Email</span><span class="action-detail">mgeneralao04@gmail.com</span></span><span class="arrow" aria-hidden="true">↗</span>
+          <span><span class="action-title">Email</span></span><span class="arrow" aria-hidden="true">↗</span>
         </a>
         <a class="action" href="https://www.google.com/maps/search/?api=1&amp;query=Manila+City" target="_blank" rel="noopener noreferrer" aria-label="Open Manila City in Google Maps">
           <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="maps-pin-clip"><path d="M12 22s8-7.2 8-13A8 8 0 1 0 4 9c0 5.8 8 13 8 13Z"/></clipPath></defs><g clip-path="url(#maps-pin-clip)"><path fill="#34a853" d="M2 2h10v10H2z"/><path fill="#4285f4" d="M12 2h10v10H12z"/><path fill="#fbbc04" d="M2 12h10v12H2z"/><path fill="#ea4335" d="M12 12h10v12H12z"/></g><circle cx="12" cy="9" r="3.1" fill="#fff"/><circle cx="12" cy="9" r="1.55" fill="#4285f4"/></svg></span>
-          <span><span class="action-title">Google Maps</span><span class="action-detail">Manila City</span></span><span class="arrow" aria-hidden="true">↗</span>
+          <span><span class="action-title">Google Maps</span></span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="social-section" aria-labelledby="social-heading">
+      <h2 class="section-label" id="social-heading">Social Media &amp; Links</h2>
+      <div class="social-links">
+        <a class="social-link social-link--facebook" href="https://www.facebook.com/share/18XrkG14vW/" target="_blank" rel="noopener noreferrer" aria-label="Visit Michael on Facebook">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 21v-8.2H17l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H8.2v3.2h2.6V21h3.4Z" fill="currentColor"/></svg>
+          <span>Facebook</span><span class="social-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="social-link social-link--tiktok" href="https://www.tiktok.com/@akagami00001?_r=1" target="_blank" rel="noopener noreferrer" aria-label="Visit Michael on TikTok">
+          <svg class="social-icon social-icon--tiktok" viewBox="0 0 24 24" aria-hidden="true"><path transform="translate(-1 0)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.08 1.76 4.15 1.13 1.1 2.71 1.61 4.25 1.78v4.01c-1.44-.05-2.89-.35-4.22-.96-.58-.26-1.13-.59-1.66-.94-.01 2.92.01 5.83-.02 8.75-.08 1.4-.54 2.79-1.35 3.95-1.31 1.93-3.58 3.19-5.92 3.23-1.44.08-2.88-.31-4.11-1.07-2.04-1.28-3.47-3.57-3.69-5.98-.03-.5-.04-1.01-.02-1.52.19-2.06 1.2-4.02 2.77-5.38 1.78-1.59 4.27-2.34 6.64-2.06.02 1.4.04 2.8.06 4.2-1.56-.51-3.4-.39-4.78.55-1.01.64-1.78 1.65-2.03 2.82-.22.56-.16 1.17-.15 1.77.38 2.41 3.24 4.43 5.62 3.44 1.57-.55 2.69-2.13 2.71-3.79.02-8.62-.01-11.25.01-14.18z" fill="#25F4EE"/><path transform="translate(1 0)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.08 1.76 4.15 1.13 1.1 2.71 1.61 4.25 1.78v4.01c-1.44-.05-2.89-.35-4.22-.96-.58-.26-1.13-.59-1.66-.94-.01 2.92.01 5.83-.02 8.75-.08 1.4-.54 2.79-1.35 3.95-1.31 1.93-3.58 3.19-5.92 3.23-1.44.08-2.88-.31-4.11-1.07-2.04-1.28-3.47-3.57-3.69-5.98-.03-.5-.04-1.01-.02-1.52.19-2.06 1.2-4.02 2.77-5.38 1.78-1.59 4.27-2.34 6.64-2.06.02 1.4.04 2.8.06 4.2-1.56-.51-3.4-.39-4.78.55-1.01.64-1.78 1.65-2.03 2.82-.22.56-.16 1.17-.15 1.77.38 2.41 3.24 4.43 5.62 3.44 1.57-.55 2.69-2.13 2.71-3.79.02-8.62-.01-11.25.01-14.18z" fill="#FE2C55"/><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.08 1.76 4.15 1.13 1.1 2.71 1.61 4.25 1.78v4.01c-1.44-.05-2.89-.35-4.22-.96-.58-.26-1.13-.59-1.66-.94-.01 2.92.01 5.83-.02 8.75-.08 1.4-.54 2.79-1.35 3.95-1.31 1.93-3.58 3.19-5.92 3.23-1.44.08-2.88-.31-4.11-1.07-2.04-1.28-3.47-3.57-3.69-5.98-.03-.5-.04-1.01-.02-1.52.19-2.06 1.2-4.02 2.77-5.38 1.78-1.59 4.27-2.34 6.64-2.06.02 1.4.04 2.8.06 4.2-1.56-.51-3.4-.39-4.78.55-1.01.64-1.78 1.65-2.03 2.82-.22.56-.16 1.17-.15 1.77.38 2.41 3.24 4.43 5.62 3.44 1.57-.55 2.69-2.13 2.71-3.79.02-8.62-.01-11.25.01-14.18z" fill="#fff"/></svg>
+          <span>TikTok</span><span class="social-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="social-link social-link--instagram" href="https://www.instagram.com/_michaelce/" target="_blank" rel="noopener noreferrer" aria-label="Visit Michael on Instagram">
+          <svg class="social-icon social-icon--instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <span>Instagram</span><span class="social-arrow" aria-hidden="true">↗</span>
         </a>
       </div>
     </section>
@@ -56,10 +74,21 @@
       <div class="details">
         <p class="eyebrow">Contact profile</p>
         <h2 id="company-heading">Michael Cesar C. Generalao</h2>
-        <p>Use the contact buttons above to reach Michael by phone, text, Messenger, or email.</p>
-        <div class="address">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <span>Manila City, Philippines</span>
+        <p class="details-role">Computer Teacher</p>
+        <p class="details-intro">Based in Manila City, Philippines. Reach out by phone, email, or social media.</p>
+        <div class="detail-list">
+          <a class="detail-item" href="tel:+639910147225">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9.3 3l2 4.7-1.8 1.5a14 14 0 0 0 5.3 5.3l1.5-1.8 4.7 2-.5 2.7a2 2 0 0 1-2.2 1.6A17 17 0 0 1 5 5.7a2 2 0 0 1 1.6-2.2Z"/></svg>
+            <span><span class="detail-label">Phone</span><span class="detail-value">0991 014 7225</span></span>
+          </a>
+          <a class="detail-item" href="mailto:mgeneralao04@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            <span><span class="detail-label">Email</span><span class="detail-value">mgeneralao04@gmail.com</span></span>
+          </a>
+          <a class="detail-item" href="https://www.google.com/maps/search/?api=1&amp;query=Manila+City" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span><span class="detail-label">Location</span><span class="detail-value">Manila City, Philippines</span></span>
+          </a>
         </div>
       </div>
     </section>
