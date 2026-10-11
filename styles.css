@@ -98,7 +98,6 @@
     }
     .save-button:hover { background: rgba(72, 222, 199, .16); transform: translateY(-1px); }
     .save-button svg { width: 17px; height: 17px; }
-    .contact-feedback { margin: 12px 0 0; color: #a5b6c0; font-size: 12px; line-height: 1.5; }
     .section { padding: 0 23px 25px; }
     .section-label {
       display: flex;

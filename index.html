@@ -20,11 +20,10 @@
       <h1 id="profile-name">Michael Cesar C. Generalao</h1>
       <p class="role">Computer Teacher</p>
       <p class="company">Manila City</p>
-      <a class="save-button" id="save-contact" href="#" role="button" aria-label="Add Michael Cesar C. Generalao to your contacts">
+      <a class="save-button" id="save-contact" href="contact.vcf" role="button" aria-label="Add Michael Cesar C. Generalao to your contacts">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m-4 4 4-4 4 4M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/></svg>
         Save contact
       </a>
-      <p class="contact-feedback" id="contact-feedback" role="status" aria-live="polite" hidden></p>
     </header>
 
     <section class="section" aria-labelledby="connect-heading">
@@ -68,8 +67,19 @@
   </main>
   <script>
     const saveContactButton = document.getElementById("save-contact");
-    const contactFeedback = document.getElementById("contact-feedback");
     const isAndroid = /Android/i.test(navigator.userAgent);
+
+    const contactCard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:Generalao;Michael;Cesar C.;;;",
+      "FN:Michael Cesar C. Generalao",
+      "TEL;TYPE=CELL:+639910147225",
+      "END:VCARD"
+    ].join("\r\n");
+    const contactFile = !isAndroid && typeof File !== "undefined"
+      ? new File([contactCard], "Michael-Cesar-C-Generalao.vcf", { type: "text/vcard" })
+      : null;
 
     if (isAndroid) {
       const intentValue = value => encodeURIComponent(value);
@@ -78,21 +88,23 @@
         "action=android.intent.action.INSERT",
         "type=vnd.android.cursor.dir/contact",
         `S.name=${intentValue("Michael Cesar C. Generalao")}`,
-        `S.phone=${intentValue("+639910147225")}`,
-        `S.email=${intentValue("mgeneralao04@gmail.com")}`,
-        `S.company=${intentValue("Manila City")}`,
-        `S.job_title=${intentValue("Computer Teacher")}`,
+        `S.phone=${intentValue("0991 014 7225")}`,
         "end"
       ].join(";");
     }
 
     saveContactButton.addEventListener("click", event => {
-      if (!isAndroid) {
-        event.preventDefault();
-        contactFeedback.textContent = "This device's browser cannot open a prefilled new-contact form directly. This feature requires a native app or the phone's contact import flow.";
-        contactFeedback.hidden = false;
+      if (isAndroid) return;
+
+      event.preventDefault();
+      if (!contactFile || !navigator.share || !navigator.canShare || !navigator.canShare({ files: [contactFile] })) {
+        window.location.assign(saveContactButton.href);
         return;
       }
+
+      navigator.share({ files: [contactFile], title: "Michael Cesar C. Generalao" }).catch(error => {
+        if (error.name !== "AbortError") window.location.assign(saveContactButton.href);
+      });
     });
   </script>
 </body>
